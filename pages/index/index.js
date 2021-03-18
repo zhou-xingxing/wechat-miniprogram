@@ -17,6 +17,12 @@ Page({
       url: '../random/random'
     })
   },
+    // 事件处理函数
+    bindViewTap2() {
+      wx.navigateTo({
+        url: '../weather/weather'
+      })
+    },
   onLoad() {
     if (wx.getUserProfile) {
       this.setData({

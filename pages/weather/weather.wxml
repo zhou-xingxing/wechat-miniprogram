@@ -1,0 +1,12 @@
+<!--pages/weather/weather.wxml-->
+<view class="container">
+  <text>
+    数据更新时间：{{update_time}}
+    您所在的城市：{{city}}
+    天气：{{wea}}   气温：{{tem}}℃
+    湿度：{{humidity}}  风向：{{win}}
+  </text>
+</view>
+<view class="container">
+  感谢易客云天气API的支持
+</view>

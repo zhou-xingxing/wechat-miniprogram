@@ -8,6 +8,8 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
-.touzi{
-  margin-bottom: 15%;
+
+.button{
+  margin-top: 10%;
+  /* margin-bottom: 10%; */
 }

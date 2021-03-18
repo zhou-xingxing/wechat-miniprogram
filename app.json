@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/random/random"
+    "pages/random/random",
+    "pages/weather/weather"
   ],
   "window": {
     "backgroundTextStyle": "light",

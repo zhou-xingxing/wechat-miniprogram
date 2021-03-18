@@ -1,9 +1,13 @@
 <!--index.wxml-->
 <view class="container">
-  <image src="/images/touzi.jpg" class="touzi"></image>
+  <image src="/images/touzi.jpg" ></image>
   
   <button class="button" bindtap="bindViewTap">
       掷骰子
+  </button>
+
+  <button class="button" bindtap="bindViewTap2">
+      查看今日天气
   </button>
 
 </view>

@@ -1,24 +1,16 @@
-// pages/random/random.js
-//生成从minNum到maxNum的随机数
-function randomNum(minNum,maxNum){ 
-  switch(arguments.length){ 
-      case 1: 
-          return parseInt(Math.random()*minNum+1,10); 
-      break; 
-      case 2: 
-          return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
-      break; 
-          default: 
-              return 0; 
-          break; 
-  } 
-} 
+// pages/weather/weather.js
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    value:0
+    city:'',
+    update_time:'',
+    wea:'',
+    tem:'',
+    humidity:'',
+    win:'',
   },
 
   /**
@@ -39,8 +31,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      value:randomNum(1,6)
+    var that=this
+    wx.request({
+      url: 'https://tianqiapi.com/api?version=v6&appid=29866954&appsecret=QLD3si1i',
+      method:'GET',
+      success:function(res){
+        // console.log(res.data);
+        that.setData({
+          city:res.data.city,
+          update_time:res.data.update_time,
+          wea:res.data.wea,
+          tem:res.data.tem,
+          humidity:res.data.humidity,
+          win:res.data.win
+        })
+      },
+      fail:function(){
+        console.log('请求失败')
+      }
     })
   },
 
