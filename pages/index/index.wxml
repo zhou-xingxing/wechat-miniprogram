@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+  <image src="/images/touzi.jpg" class="touzi"></image>
+  
+  <button class="button" bindtap="bindViewTap">
+      掷骰子
+  </button>
+
+</view>

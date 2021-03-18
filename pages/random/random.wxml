@@ -1,0 +1,5 @@
+<!--pages/random/random.wxml-->
+<view class="container">
+  <image src="/images/harden.png" class="touzi"></image>
+  <view>本次投掷：{{value}}</view>
+</view>
