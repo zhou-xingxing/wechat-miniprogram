@@ -1,0 +1,81 @@
+<!--pages/show/show.wxml-->
+<view>
+<swiper indicator-dots="true" autoplay="true" interval="3000" style="height:400rpx">
+	<swiper-item>
+		<image src="/images/3.png" style="width:750rpx;height:350rpx;">
+	</image>
+	</swiper-item>
+	<swiper-item>
+		<image src="/images/2.png" style="width:750rpx;height:350rpx;">
+	</image>
+	</swiper-item>
+	<swiper-item>
+		<image src="/images/1.png" style="width:750rpx;height:350rpx;">
+	</image>
+	</swiper-item>
+</swiper>
+</view>
+
+<view class="button-group">
+		<view class="icon">
+			<image  src="/images/apple.png" class="icon-image"></image>
+			<view class="icon-text"><text>苹果</text></view>
+		</view>
+		<view class="icon">
+			<image src="/images/banana.png" class="icon-image"></image>
+			<view class="icon-text"><text>香蕉</text></view>
+		</view>
+		<view class="icon">
+			<image src="/images/blueberry.png" class="icon-image"></image>
+			<view class="icon-text"><text>蓝莓</text></view>
+		</view>
+		<view class="icon">
+			<image src="/images/cherry.png" class="icon-image"></image>
+			<view class="icon-text"><text>樱桃</text></view>
+		</view>
+		<view class="icon">
+			<image src="/images/mango.png" class="icon-image"></image>
+			<view class="icon-text"><text>芒果</text></view>
+		</view>
+		<view class="icon">
+			<image src="/images/orange.png" class="icon-image"></image>
+			<view class="icon-text"><text>橘子</text></view>
+		</view>
+		<view class="icon">
+			<image src="/images/pineapple.png" class="icon-image"></image>
+			<view class="icon-text"><text>菠萝</text></view>
+		</view>
+		<view class="icon">
+			<image src="/images/watermelon.png" class="icon-image"></image>
+			<view class="icon-text"><text>西瓜</text></view>
+		</view>
+</view>
+<view class="list">
+	<view class="list-item">
+		<view class="list-item-left">
+			<image src="/images/building-Fill.png" class="list-item-image"></image>
+		</view>
+		<view class="list-item-right" >
+			<button type="primary" bindtap="skipRandom">摇骰子</button>
+			
+		</view>		
+	</view>
+	<view class="list-item">
+		<view class="list-item-left">
+			<image src="/images/bag-Fill.png" class="list-item-image"></image>
+		</view>
+		<view class="list-item-right" >
+			<button type="primary" bindtap="skipWeather">查天气</button>
+		</view>
+	</view>	
+	<view class="list-item">
+		<view class="list-item-left">
+			<image src="/images/edit-Fill.png" class="list-item-image"></image>
+		</view>
+		<view class="list-item-right">
+			<text>待开发</text>
+		</view>
+	</view>
+</view>
+
+

@@ -1,0 +1,61 @@
+/* pages/show/show.wxss */
+.button-group{
+  /* 包括边框 */
+  width: 750rpx;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.icon{
+  background-color: pink;
+  box-sizing: border-box;
+  width: 165rpx;
+  height: 210rpx;
+  margin:10rpx;
+  float: left;
+  padding:4rpx;
+}
+.icon-image{
+  height: 150rpx;
+  width: 150rpx;
+}
+.icon-text{
+  width: fit-content;
+  margin: auto;
+  color:rgba(219, 59, 18, 0.788);
+}
+.list{
+  width: 750rpx;
+  background-color: powderblue;
+  margin-top:30rpx;
+  padding: 20rpx 0;
+}
+.list-item{
+  margin: 40rpx auto;
+  height: 210rpx;
+  width: 660rpx;
+  background-color: purple;
+}
+.list-item-left{
+  background-color: pink;
+  width: 160rpx;
+  height: 180rpx;
+  margin:16rpx;
+  float: left;
+  padding-left: 8rpx;
+}
+
+.list-item-image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.list-item-right{
+  background-color: pink;
+  /* 这个太重要了 */
+  box-sizing: border-box;
+  width: 425rpx;
+  height: 180rpx;
+  margin:16rpx;
+  float: left;
+  padding: 40rpx 20rpx;
+}
