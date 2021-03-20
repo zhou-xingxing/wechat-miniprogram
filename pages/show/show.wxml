@@ -73,7 +73,7 @@
 			<image src="/images/edit-Fill.png" class="list-item-image"></image>
 		</view>
 		<view class="list-item-right">
-			<text>待开发</text>
+			<button type="primary" bindtap="skipZe">ZeAPI</button>
 		</view>
 	</view>
 </view>

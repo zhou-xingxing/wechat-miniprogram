@@ -1,0 +1,8 @@
+<!--pages/ze/ze.wxml-->
+<view class="container">
+  <text>
+    Ze服务器的消息：
+
+    {{message}}
+  </text>
+</view>

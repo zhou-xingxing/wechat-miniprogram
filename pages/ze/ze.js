@@ -1,28 +1,11 @@
-// pages/show/show.js
+// pages/ze/ze.js
 Page({
-    // 事件处理函数
-    skipRandom() {
-      wx.navigateTo({
-        url: '../random/random'
-      })
-    },
-    // 事件处理函数
-    skipWeather() {
-      wx.navigateTo({
-        url: '../weather/weather'
-      })
-    },
-    // 事件处理函数
-    skipZe() {
-      wx.navigateTo({
-        url: '../ze/ze'
-      })
-    },
+
   /**
    * 页面的初始数据
    */
   data: {
-
+    message:'',
   },
 
   /**
@@ -43,7 +26,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this
+    wx.request({
+      url: 'https://ss.xiaozeze.top:9527/server',
+      method:'GET',
+      success:function(res){
+        // console.log(res)
+        that.setData({
+          message:res.data.Data
+        })
+      },
+      fail:function(){
+        that.setData({
+          message:"请求失败"
+        })
+      }
+    })
   },
 
   /**
@@ -77,17 +75,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function (res) {
-    return{
-      title:"Ze小工具"
-    }
-  },
+  onShareAppMessage: function () {
 
-  onShareTimeline:function(){
-    return{
-
-    }
   }
-
-
 })
