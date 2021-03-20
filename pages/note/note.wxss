@@ -1,0 +1,27 @@
+/* pages/note/note.wxss */
+
+.form-panel{
+  box-sizing: border-box;
+  width: 750rpx;
+  background-color: lightblue;
+  padding: 5% 0 10%;
+}
+.form-title{
+  font-size:60rpx;
+  font-weight: bold;
+  margin:30rpx auto;
+  width:fit-content;
+  color:rgb(255, 145, 0);
+}
+.form-input{
+  height:400rpx;
+  width: 600rpx;
+  border: 5rpx dashed  blue;
+  margin:0 auto 140rpx;
+}
+.form-text{
+  height:400rpx;
+  width:600rpx;
+  overflow:scroll;
+  font-size:40rpx;
+}

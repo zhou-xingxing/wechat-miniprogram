@@ -1,34 +1,30 @@
-// pages/show/show.js
+// pages/note/note.js
 Page({
-    // 事件处理函数
-    skipRandom() {
-      wx.navigateTo({
-        url: '../random/random'
-      })
-    },
-    // 事件处理函数
-    skipWeather() {
-      wx.navigateTo({
-        url: '../weather/weather'
-      })
-    },
-    // 事件处理函数
-    skipZe() {
-      wx.navigateTo({
-        url: '../ze/ze'
-      })
-    },
-    // 事件处理函数
-    skipNote() {
-      wx.navigateTo({
-        url: '../note/note'
-      })
-    },
+
   /**
    * 页面的初始数据
    */
   data: {
 
+  },
+  //提交事件
+  formSubmit(e) {
+    var message=e.detail.value.message;
+    console.log('form发生了submit事件，携带数据为：', message);
+    if(message==""){
+      wx.showToast({
+        title: '输入不能为空',
+        icon: 'error',
+        duration: 2000
+       })
+    }
+    else{
+      wx.showToast({
+        title: '提交成功',
+        icon: 'success',
+        duration: 2000
+       })
+    }
   },
 
   /**
@@ -83,17 +79,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function (res) {
-    return{
-      title:"Ze小工具"
-    }
-  },
+  onShareAppMessage: function () {
 
-  onShareTimeline:function(){
-    return{
-
-    }
   }
-
-
 })
