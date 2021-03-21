@@ -73,17 +73,19 @@
 			<image src="/images/edit-Fill.png" class="list-item-image"></image>
 		</view>
 		<view class="list-item-right">
+			<button type="primary" bindtap="skipNote">写树洞</button>
+		</view>
+	</view>
+
+	<view class="list-item">
+		<view class="list-item-left">
+			<image src="/images/cloud-Fill.png" class="list-item-image"></image>
+		</view>
+		<view class="list-item-right">
 			<button type="primary" bindtap="skipZe">ZeAPI</button>
 		</view>
 	</view>
-	<view class="list-item">
-		<view class="list-item-left">
-			<image src="/images/edit-Fill.png" class="list-item-image"></image>
-		</view>
-		<view class="list-item-right">
-			<button type="primary" bindtap="skipNote">待开发</button>
-		</view>
-	</view>
+
 </view>
 
 

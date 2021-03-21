@@ -11,14 +11,7 @@
       "list": []
     },
     "miniprogram": {
-      "list": [
-        {
-          "name": "pages/note/note",
-          "pathName": "pages/note/note",
-          "query": "",
-          "scene": null
-        }
-      ]
+      "list": []
     }
   }
 }

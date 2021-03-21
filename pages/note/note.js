@@ -9,22 +9,50 @@ Page({
   },
   //提交事件
   formSubmit(e) {
-    var message=e.detail.value.message;
-    console.log('form发生了submit事件，携带数据为：', message);
-    if(message==""){
+    var msg=e.detail.value.message;
+    // console.log('form发生了submit事件，携带数据为：', msg);
+    if(msg==""){
       wx.showToast({
         title: '输入不能为空',
         icon: 'error',
         duration: 2000
        })
+       return
     }
-    else{
-      wx.showToast({
-        title: '提交成功',
-        icon: 'success',
-        duration: 2000
-       })
-    }
+    wx.request({
+      url: 'https://ss.xiaozeze.top:9527/note',
+      method:'POST',
+      data:{
+        message:msg,
+      },
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        // console.log(res.data);
+        wx.showToast({
+          title: '投递成功',
+          icon: 'success',
+          duration: 1500,
+          success: function() {
+            setTimeout(function() {
+              //要延时执行的代码
+              wx.navigateBack({
+                delta: 1 //返回上级页面
+              })
+            }, 1500) //延迟时间
+          },
+        })
+      },
+      fail:function(){
+        wx.showToast({
+          title: '投递失败',
+          icon: 'error',
+          duration: 2000
+        })
+      }
+
+    })
   },
 
   /**
