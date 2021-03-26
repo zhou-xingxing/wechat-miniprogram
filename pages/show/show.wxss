@@ -1,18 +1,22 @@
 /* pages/show/show.wxss */
 .button-group{
-  /* 包括边框 */
   width: 750rpx;
+  /* 包括边框 */
   box-sizing: border-box;
   overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .icon{
   background-color: pink;
   box-sizing: border-box;
+  /* 圆角边框 */
+  border-radius: 20rpx;
   width: 165rpx;
   height: 210rpx;
-  margin:10rpx;
-  float: left;
+  margin: 10rpx;
   padding:4rpx;
 }
 .icon-image{
@@ -29,20 +33,28 @@
   background-color: powderblue;
   margin-top:30rpx;
   padding: 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .list-item{
   margin: 40rpx auto;
   height: 210rpx;
   width: 660rpx;
   background-color: purple;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .list-item-left{
   background-color: pink;
   width: 160rpx;
   height: 180rpx;
-  margin:16rpx;
-  float: left;
-  padding-left: 8rpx;
+  /* margin:16rpx; */
+  /* padding-left: 8rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .list-item-image{
@@ -55,7 +67,8 @@
   box-sizing: border-box;
   width: 425rpx;
   height: 180rpx;
-  margin:16rpx;
-  float: left;
-  padding: 40rpx 20rpx;
+  /* margin:16rpx;  */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

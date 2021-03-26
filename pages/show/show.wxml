@@ -82,7 +82,7 @@
 			<image src="/images/cloud-Fill.png" class="list-item-image"></image>
 		</view>
 		<view class="list-item-right">
-			<button type="primary" bindtap="skipZe">ZeAPI</button>
+			<button type="primary">ZeAPI</button>
 		</view>
 	</view>
 

@@ -6,6 +6,26 @@
     "pages/ze/ze",
     "pages/note/note"
   ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home_select.png",
+        "pagePath": "pages/show/show",
+        "text": "首页"
+      },
+      {
+        "iconPath": "/images/me.png",
+        "selectedIconPath": "/images/me_select.png",
+        "pagePath": "pages/ze/ze",
+        "text": "我的"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

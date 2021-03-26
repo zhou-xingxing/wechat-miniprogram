@@ -12,14 +12,9 @@ Page({
         url: '../weather/weather'
       })
     },
+
     // 事件处理函数
-    skipZe() {
-      wx.navigateTo({
-        url: '../ze/ze'
-      })
-    },
-    // 事件处理函数
-    skipNote() {
+    skipNote:function() {
       wx.navigateTo({
         url: '../note/note'
       })
