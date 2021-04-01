@@ -23,7 +23,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    func:[
+      {imgsrc:"/images/building-Fill.png",
+       title:"摇骰子",
+       bindtap:"skipRandom"
+      },
+      {imgsrc:"/images/bag-Fill.png",
+       title:"查天气",
+       bindtap:"skipWeather"
+      },
+      {imgsrc:"/images/edit-Fill.png",
+       title:"写树洞",
+       bindtap:"skipNote"
+      },
+      {imgsrc:"/images/cloud-Fill.png",
+       title:"待开发",
+       bindtap:""
+      },
+    ]
   },
 
   /**

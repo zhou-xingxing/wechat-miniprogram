@@ -51,41 +51,16 @@
 		</view>
 </view>
 <view class="list">
-	<view class="list-item">
-		<view class="list-item-left">
-			<image src="/images/building-Fill.png" class="list-item-image"></image>
+	<block wx:for="{{func}}">
+		<view class="list-item">
+			<view class="list-item-left">
+				<image src="{{item.imgsrc}}" class="list-item-image"></image>
+			</view>
+			<view class="list-item-right" >
+				<button type="primary" bindtap="{{item.bindtap}}">{{item.title}}</button>	
+			</view>			
 		</view>
-		<view class="list-item-right" >
-			<button type="primary" bindtap="skipRandom">摇骰子</button>
-			
-		</view>		
-	</view>
-	<view class="list-item">
-		<view class="list-item-left">
-			<image src="/images/bag-Fill.png" class="list-item-image"></image>
-		</view>
-		<view class="list-item-right" >
-			<button type="primary" bindtap="skipWeather">查天气</button>
-		</view>
-	</view>	
-	<view class="list-item">
-		<view class="list-item-left">
-			<image src="/images/edit-Fill.png" class="list-item-image"></image>
-		</view>
-		<view class="list-item-right">
-			<button type="primary" bindtap="skipNote">写树洞</button>
-		</view>
-	</view>
-
-	<view class="list-item">
-		<view class="list-item-left">
-			<image src="/images/cloud-Fill.png" class="list-item-image"></image>
-		</view>
-		<view class="list-item-right">
-			<button type="primary">ZeAPI</button>
-		</view>
-	</view>
-
+	</block>
 </view>
 
 
