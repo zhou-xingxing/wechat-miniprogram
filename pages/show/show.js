@@ -19,6 +19,15 @@ Page({
         url: '../note/note'
       })
     },
+
+    // 事件处理函数
+    skipfuture:function() {
+      wx.showToast({
+        title: '敬请期待',
+        icon:"error",
+        duration:1000,
+      })
+    },
   /**
    * 页面的初始数据
    */
@@ -38,7 +47,7 @@ Page({
       },
       {imgsrc:"/images/cloud-Fill.png",
        title:"待开发",
-       bindtap:""
+       bindtap:"skipfuture"
       },
     ]
   },
