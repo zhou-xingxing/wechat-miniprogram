@@ -9,14 +9,27 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log(res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: 'https://ss.xiaozeze.top:9528/getopenid',
+          data: {
+            code: res.code
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success (res) {
+            console.log(res.data)
+          }
+        })
       }
     })
     //检查更新
     const updateManager = wx.getUpdateManager()
     updateManager.onCheckForUpdate(function (res) {
       // 请求完新版本信息的回调
-      console.log(res.hasUpdate)
+      // console.log(res.hasUpdate)
     })
 
     updateManager.onUpdateReady(function () {
