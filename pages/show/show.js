@@ -28,6 +28,12 @@ Page({
         duration:1000,
       })
     },
+
+    skipnbaSchedule:function(){
+      wx.navigateTo({
+        url: '../nbaSchedule/nbaSchedule'
+      })
+    },
   /**
    * 页面的初始数据
    */
@@ -46,8 +52,8 @@ Page({
        bindtap:"skipNote"
       },
       {imgsrc:"/images/cloud-Fill.png",
-       title:"待开发",
-       bindtap:"skipfuture"
+       title:"NBA赛程",
+       bindtap:"skipnbaSchedule"
       },
     ]
   },

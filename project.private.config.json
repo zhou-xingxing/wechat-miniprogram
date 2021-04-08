@@ -11,7 +11,13 @@
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "pages/nbaSchedule/nbaSchedule",
+          "pathName": "pages/nbaSchedule/nbaSchedule",
+          "scene": null
+        }
+      ]
     }
   }
 }

@@ -5,14 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    message:'',
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  
   },
 
   /**
@@ -26,22 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that=this
-    wx.request({
-      url: 'https://ss.xiaozeze.top:9527/server',
-      method:'GET',
-      success:function(res){
-        // console.log(res)
-        that.setData({
-          message:res.data.Data
-        })
-      },
-      fail:function(){
-        that.setData({
-          message:"请求失败"
-        })
-      }
-    })
+
   },
 
   /**

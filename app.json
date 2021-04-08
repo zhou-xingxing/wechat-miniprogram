@@ -4,7 +4,8 @@
     "pages/random/random",
     "pages/weather/weather",
     "pages/ze/ze",
-    "pages/note/note"
+    "pages/note/note",
+    "pages/nbaSchedule/nbaSchedule"
   ],
   "tabBar": {
     "color": "#7A7E83",
@@ -34,5 +35,4 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
-  
 }
