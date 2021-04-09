@@ -1,0 +1,25 @@
+<!--pages/switchTeam/switchTeam.wxml-->
+<view class="container">
+  <view class="form-panel">
+    <view class="form-header">
+      选择你的主队
+    </view>
+    <form catchsubmit="formSubmit">
+      <scroll-view class="form-content" scroll-y="true">
+        <radio-group bindchange="radioChange">
+          <label wx:for="{{items}}" wx:key="{{item.value}}">
+            <view class="form-item">
+              {{item.name}} <radio value="{{item.value}}" checked=""/>
+            </view>
+          </label>
+        </radio-group>
+      </scroll-view>
+        <view class="form-button">
+          <button type="primary" formType="submit">
+            确定
+          </button>
+        </view>
+    </form>
+  </view>
+</view>
+

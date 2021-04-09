@@ -1,0 +1,36 @@
+/* pages/switchTeam/switchTeam.wxss */
+.form-panel{
+  box-sizing: border-box;
+  background-color: blanchedalmond;
+  width: 650rpx;
+  /* height: 1000rpx; */
+  border-radius: 5%;
+}
+.form-header{
+  box-sizing: border-box;
+  background-color: crimson;
+  margin:60rpx 0 0 0;
+  height: 100rpx;
+  font-size:50rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.form-content{
+  box-sizing: border-box;
+  height: 700rpx;
+}
+.form-item{
+  box-sizing: border-box;
+  height: 100rpx;
+  background-color:green;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  border-bottom:3rpx solid whitesmoke;
+  font-size: 35rpx;
+}
+.form-button{
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
+}

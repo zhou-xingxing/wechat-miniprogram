@@ -20,15 +20,6 @@ Page({
       })
     },
 
-    // 事件处理函数
-    skipfuture:function() {
-      wx.showToast({
-        title: '敬请期待',
-        icon:"error",
-        duration:1000,
-      })
-    },
-
     skipnbaSchedule:function(){
       wx.navigateTo({
         url: '../nbaSchedule/nbaSchedule'

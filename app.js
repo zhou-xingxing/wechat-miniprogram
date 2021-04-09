@@ -2,17 +2,19 @@
 App({
   onLaunch() {
     // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    // const logs = wx.getStorageSync('logs') || []
+    // logs.unshift(Date.now())
+    // wx.setStorageSync('logs', logs)
 
     // 登录
     wx.login({
       success: res => {
         // console.log(res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        let that=this
         wx.request({
-          url: 'https://ss.xiaozeze.top:9528/getopenid',
+          url: 'https://127.0.0.1:9527/getopenid',
+          method:'POST',
           data: {
             code: res.code
           },
@@ -21,6 +23,17 @@ App({
           },
           success (res) {
             console.log(res.data)
+            //全局变量写法
+            // that.globalData.openid=res.data.openid
+            // console.log(that.globalData.openid)
+            /*异步写法 
+            wx.setStorage({
+              data: res.data.openid,
+              key: 'openid',
+            })
+            */
+           wx.setStorageSync('openid', res.data.openid)
+           that.globalData.host_team=res.data.host_team
           }
         })
       }
@@ -50,7 +63,9 @@ App({
     })    
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    openid:null,
+    host_team:"",
   }
 })
 
