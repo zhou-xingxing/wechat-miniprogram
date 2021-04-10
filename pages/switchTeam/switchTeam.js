@@ -1,4 +1,5 @@
 // pages/switchTeam/switchTeam.js
+const app=getApp()
 Page({
 
   /**
@@ -30,8 +31,61 @@ Page({
   //提交事件
   formSubmit(e){
     console.log(this.data.host_team)
+    if(this.data.host_team==""){
+      wx.showToast({
+        title: '请做出您的选择',
+        icon: 'error',
+        duration: 1500
+       })
+       return
+    }
     //发送修改数据
-    
+    let that=this
+    wx.request({
+      url: 'https://127.0.0.1:9527/switchTeam',
+      method:'POST',
+      data:{
+        host_team:that.data.host_team,
+        openid:wx.getStorageSync('openid'),
+      },
+      header:{
+        'content-type': 'application/json'
+      },
+      success(res){
+        console.log(res.data)
+        if(res.data.ok==false){
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'error',
+            duration: 2000
+          })
+        }
+        else{
+          //修改全局变量
+          app.globalData.host_team=that.data.host_team
+          wx.showToast({
+            title: '修改成功',
+            icon: 'success',
+            duration: 1500,
+            success: function() {
+              setTimeout(function() {
+                //要延时执行的代码
+                wx.navigateBack({
+                  delta: 1 //返回上级页面
+                })
+              }, 1500) //延迟时间
+            },
+          })
+        }
+      },
+      fail:function(){
+        wx.showToast({
+          title: '请求失败',
+          icon: 'error',
+          duration: 1500
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

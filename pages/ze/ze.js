@@ -43,7 +43,6 @@ Page({
     //同步写法
     this.setData({
        openid:wx.getStorageSync('openid'),
-       host_team:app.globalData.host_team
       }     
     )
   },
@@ -52,7 +51,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+  this.setData({
+    host_team:app.globalData.host_team
+  })
   },
 
   /**
