@@ -7,7 +7,7 @@ Page({
   data: {
     schedule:[
       {
-        date:"04-08",
+        date:"04-10",
         gamenumber:5,
         games:[
           {
@@ -38,7 +38,7 @@ Page({
         ]
       },
       {
-        date:"04-09",
+        date:"04-11",
         gamenumber:4,
         games:[
           {

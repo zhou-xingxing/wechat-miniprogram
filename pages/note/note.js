@@ -15,12 +15,12 @@ Page({
       wx.showToast({
         title: '输入不能为空',
         icon: 'error',
-        duration: 2000
+        duration: 1500
        })
        return
     }
     wx.request({
-      url: 'https://ss.xiaozeze.top:9527/note',
+      url: 'https://ss.xiaozeze.top:9527/sendHole',
       method:'POST',
       data:{
         message:msg,
@@ -33,14 +33,14 @@ Page({
         wx.showToast({
           title: '投递成功',
           icon: 'success',
-          duration: 1500,
+          duration: 1000,
           success: function() {
             setTimeout(function() {
               //要延时执行的代码
               wx.navigateBack({
                 delta: 1 //返回上级页面
               })
-            }, 1500) //延迟时间
+            }, 1000) //延迟时间
           },
         })
       },
@@ -48,7 +48,7 @@ Page({
         wx.showToast({
           title: '投递失败',
           icon: 'error',
-          duration: 2000
+          duration: 1500
         })
       }
 

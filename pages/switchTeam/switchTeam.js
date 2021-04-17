@@ -30,7 +30,7 @@ Page({
 
   //提交事件
   formSubmit(e){
-    console.log(this.data.host_team)
+    // console.log(this.data.host_team)
     if(this.data.host_team==""){
       wx.showToast({
         title: '请做出您的选择',
@@ -42,7 +42,7 @@ Page({
     //发送修改数据
     let that=this
     wx.request({
-      url: 'https://127.0.0.1:9527/switchTeam',
+      url: 'https://ss.xiaozeze.top:9527/switchTeam',
       method:'POST',
       data:{
         host_team:that.data.host_team,
@@ -52,12 +52,12 @@ Page({
         'content-type': 'application/json'
       },
       success(res){
-        console.log(res.data)
+        // console.log(res.data)
         if(res.data.ok==false){
           wx.showToast({
             title: res.data.msg,
             icon: 'error',
-            duration: 2000
+            duration: 1500
           })
         }
         else{
@@ -66,14 +66,14 @@ Page({
           wx.showToast({
             title: '修改成功',
             icon: 'success',
-            duration: 1500,
+            duration: 1000,
             success: function() {
               setTimeout(function() {
                 //要延时执行的代码
                 wx.navigateBack({
                   delta: 1 //返回上级页面
                 })
-              }, 1500) //延迟时间
+              }, 1000) //延迟时间
             },
           })
         }

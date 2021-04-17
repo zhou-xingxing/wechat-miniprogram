@@ -38,10 +38,10 @@ Page({
        title:"查天气",
        bindtap:"skipWeather"
       },
-      {imgsrc:"/images/edit-Fill.png",
-       title:"写树洞",
-       bindtap:"skipNote"
-      },
+      // {imgsrc:"/images/edit-Fill.png",
+      //  title:"写树洞",
+      //  bindtap:"skipNote"
+      // },
       {imgsrc:"/images/cloud-Fill.png",
        title:"NBA赛程",
        bindtap:"skipnbaSchedule"

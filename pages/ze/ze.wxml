@@ -9,9 +9,6 @@
     <view>
       我的主队：{{host_team}}
     </view>
-    <view>
-      {{openid}}
-    </view>
   </view>
   <view style="margin:100rpx auto;">
     <button type="primary" bindtap="skipSwitchTeam">选择主队</button>
