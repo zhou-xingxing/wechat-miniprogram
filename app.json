@@ -5,8 +5,9 @@
     "pages/weather/weather",
     "pages/ze/ze",
     "pages/note/note",
-    "pages/nbaSchedule/nbaSchedule",
-    "pages/switchTeam/switchTeam"
+    "pages/nbaStandings/nbaStandings",
+    "pages/switchTeam/switchTeam",
+    "pages/nbaSchedule/nbaSchedule"
   ],
   "tabBar": {
     "color": "#7A7E83",

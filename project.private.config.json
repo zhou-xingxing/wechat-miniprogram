@@ -13,14 +13,15 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/nbaSchedule/nbaSchedule",
-          "pathName": "pages/nbaSchedule/nbaSchedule",
+          "name": "pages/nbaStandings/nbaStandings",
+          "pathName": "pages/nbaStandings/nbaStandings",
           "query": "",
           "scene": null
         },
         {
           "name": "pages/switchTeam/switchTeam",
           "pathName": "pages/switchTeam/switchTeam",
+          "query": "",
           "scene": null
         }
       ]

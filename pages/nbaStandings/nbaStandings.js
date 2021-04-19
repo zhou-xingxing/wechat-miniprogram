@@ -5,14 +5,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    east:[],
+    west:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that=this
+    wx.request({
+      url: 'https://localhost:9527/team_standings',
+      method:'GET',
+      success: function(res){
+        // console.log(res.data.east)
+        // console.log(res.data.west)
+        that.setData({
+          east:res.data.east,
+          west:res.data.west
+        })
+      },
+      fail:function(){
+        wx.showToast({
+          title: '请求失败',
+          icon: 'error',
+          duration: 1500
+        })
+      }
+    })
   },
 
   /**

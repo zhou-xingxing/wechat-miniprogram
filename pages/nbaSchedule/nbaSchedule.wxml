@@ -1,17 +1,2 @@
 <!--pages/nbaSchedule/nbaSchedule.wxml-->
-<view>
-  <image src="/images/nba-icon.png" class="nbaSchedule_title">
-  </image>
-</view>
-<block wx:for="{{schedule}}" wx:for-item="schedule">
-  <view class="nbaSchedule_table">
-    <view class="nbaSchedule_table_head">
-      <text>{{schedule.date}}</text>
-      <text>{{schedule.gamenumber}}场比赛</text>
-    </view>
-    <view class="nbaSchedule_table_content" wx:for="{{schedule.games}}" wx:for-item="games">
-      <text>{{games.time}}</text>
-      <text>{{games.team1}}vs{{games.team2}}</text>
-    </view>
-  </view>
-</block>
+<text>pages/nbaSchedule/nbaSchedule.wxml</text>

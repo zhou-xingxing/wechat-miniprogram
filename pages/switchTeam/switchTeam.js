@@ -8,16 +8,10 @@ Page({
   data: {
     host_team:"",
     items: [
-      {value: '篮网', name: '篮网'},
-      {value: '湖人', name: '湖人' },
-      {value: '快船', name: '快船'},
-      {value: '76人', name: '76人'},
-      {value: '爵士', name: '爵士'},
-      {value: '雄鹿', name: '雄鹿'},
-      {value: '太阳', name: '太阳'},
-      {value: '热火', name:'热火' },
-      {value: '勇士', name: '勇士'},
-      {value: '火箭', name: '火箭'},
+      {value: 'nets', name: '篮网'},
+      {value: 'lakers', name: '湖人' },
+      {value: 'clippers', name: '快船'},
+      {value: 'sixers', name: '76人'},
     ]
   },
   //radio变化

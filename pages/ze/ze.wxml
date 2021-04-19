@@ -7,10 +7,13 @@
     </view>
     <open-data type="userNickName"></open-data>  
     <view>
-      我的主队：{{host_team}}
+      我的主队：{{host_team_name}}
     </view>
   </view>
   <view style="margin:100rpx auto;">
     <button type="primary" bindtap="skipSwitchTeam">选择主队</button>
+  </view>
+  <view style="margin:100rpx auto;">
+    <button type="primary" bindtap="skipTeamSchedule">主队赛程</button>
   </view>
 </view>

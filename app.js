@@ -9,7 +9,7 @@ App({
     // 登录
     wx.login({
       success: res => {
-        console.log(res)
+        // console.log(res)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         let that=this
         wx.request({
@@ -22,7 +22,7 @@ App({
             'content-type': 'application/json' // 默认值
           },
           success (res) {
-            console.log(res)
+            // console.log(res)
             //全局变量写法
             // that.globalData.openid=res.data.openid
             // console.log(that.globalData.openid)

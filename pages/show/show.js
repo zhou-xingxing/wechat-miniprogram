@@ -20,9 +20,9 @@ Page({
       })
     },
 
-    skipnbaSchedule:function(){
+    skipnbaStandings:function(){
       wx.navigateTo({
-        url: '../nbaSchedule/nbaSchedule'
+        url: '../nbaStandings/nbaStandings'
       })
     },
   /**
@@ -43,8 +43,8 @@ Page({
       //  bindtap:"skipNote"
       // },
       {imgsrc:"/images/cloud-Fill.png",
-       title:"NBA赛程",
-       bindtap:"skipnbaSchedule"
+       title:"NBA球队排名",
+       bindtap:"skipnbaStandings"
       },
     ]
   },
