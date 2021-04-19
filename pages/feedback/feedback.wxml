@@ -3,7 +3,7 @@
   <view class="form-panel">
     <form catchsubmit="formSubmit">
         <view class="form-title">
-          <text>树洞</text>
+          <text>反馈</text>
         </view>
 
       <view class="form-input">

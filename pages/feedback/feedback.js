@@ -20,7 +20,7 @@ Page({
        return
     }
     wx.request({
-      url: 'https://ss.xiaozeze.top:9527/sendHole',
+      url: 'https://ss.xiaozeze.top:9527/feedback',
       method:'POST',
       data:{
         message:msg,
@@ -31,7 +31,7 @@ Page({
       success: function (res) {
         // console.log(res.data);
         wx.showToast({
-          title: '投递成功',
+          title: '提交成功',
           icon: 'success',
           duration: 1000,
           success: function() {
@@ -46,7 +46,7 @@ Page({
       },
       fail:function(){
         wx.showToast({
-          title: '投递失败',
+          title: '提交失败',
           icon: 'error',
           duration: 1500
         })

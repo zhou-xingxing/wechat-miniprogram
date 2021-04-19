@@ -11,6 +11,16 @@ Page({
       url: '../nbaSchedule/nbaSchedule',
     })
   },
+  skipTeamSchedule:function(){
+    wx.navigateTo({
+      url: '../nbaSchedule/nbaSchedule',
+    })
+  },
+  skipFeedback:function(){
+    wx.navigateTo({
+      url: '../feedback/feedback',
+    })
+  },
   /**
    * 页面的初始数据
    */

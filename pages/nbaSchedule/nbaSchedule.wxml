@@ -11,18 +11,19 @@
       <text>{{team_name}}</text>
     </view>
     <view class="nbaStandings_table_content" style="border-bottom:2rpx solid black;">
-      <text>月份</text>
-      <text>主队VS客队</text>
+      <text>日期</text>
+      <text>主队vs客队</text>
       <text>比分</text>
       <text>结果</text>
     
     </view>
     <view class="nbaStandings_table_content" wx:for="{{team_schedule}}" >
-      <text>{{item.month}}</text>
-      <text>{{item.homeTeam}}VS{{item.awayTeam}}</text>
-      <text>{{item.homeTeamScore}}VS{{item.awayTeamScore}}</text>
+      <text>{{item.dateTime}}</text>
+      <text>{{item.homeTeam}}vs{{item.awayTeam}}</text>
+      <text>{{item.homeTeamScore}}-{{item.awayTeamScore}}</text>
       <text wx:if="{{item.winOrLoss == null}}">未开始</text>
-      <text wx:else>{{item.winOrLoss}}</text>
+      <text wx:elif="{{item.winOrLoss == 'Won'}}">胜</text>
+      <text wx:else>负</text>
     </view>
   </view>
 
