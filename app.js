@@ -2,21 +2,47 @@
 App({
   onLaunch() {
     // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    // const logs = wx.getStorageSync('logs') || []
+    // logs.unshift(Date.now())
+    // wx.setStorageSync('logs', logs)
 
     // 登录
     wx.login({
       success: res => {
+        // console.log(res)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        let that=this
+        wx.request({
+          url: 'https://ss.xiaozeze.top:9527/getopenid',
+          method:'POST',
+          data: {
+            code: res.code
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success (res) {
+            // console.log(res)
+            //全局变量写法
+            // that.globalData.openid=res.data.openid
+            // console.log(that.globalData.openid)
+            /*异步写法 
+            wx.setStorage({
+              data: res.data.openid,
+              key: 'openid',
+            })
+            */
+           wx.setStorageSync('openid', res.data.openid)
+           that.globalData.host_team=res.data.host_team
+          }
+        })
       }
     })
     //检查更新
     const updateManager = wx.getUpdateManager()
     updateManager.onCheckForUpdate(function (res) {
       // 请求完新版本信息的回调
-      console.log(res.hasUpdate)
+      // console.log(res.hasUpdate)
     })
 
     updateManager.onUpdateReady(function () {
@@ -37,7 +63,9 @@ App({
     })    
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    openid:null,
+    host_team:"",
   }
 })
 

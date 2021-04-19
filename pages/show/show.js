@@ -20,12 +20,9 @@ Page({
       })
     },
 
-    // 事件处理函数
-    skipfuture:function() {
-      wx.showToast({
-        title: '敬请期待',
-        icon:"error",
-        duration:1000,
+    skipnbaStandings:function(){
+      wx.navigateTo({
+        url: '../nbaStandings/nbaStandings'
       })
     },
   /**
@@ -41,13 +38,13 @@ Page({
        title:"查天气",
        bindtap:"skipWeather"
       },
-      {imgsrc:"/images/edit-Fill.png",
-       title:"写树洞",
-       bindtap:"skipNote"
-      },
+      // {imgsrc:"/images/edit-Fill.png",
+      //  title:"写树洞",
+      //  bindtap:"skipNote"
+      // },
       {imgsrc:"/images/cloud-Fill.png",
-       title:"待开发",
-       bindtap:"skipfuture"
+       title:"NBA球队排名",
+       bindtap:"skipnbaStandings"
       },
     ]
   },

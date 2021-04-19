@@ -1,0 +1,52 @@
+<!--pages/nbaSchedule/nbaSchedule.wxml-->
+<view>
+  <image src="/images/nba-icon.png" class="nbaStandings_title">
+  </image>
+</view>
+
+  <view class="nbaStandings_table">
+    <view class="nbaStandings_table_head">
+      <text>东部</text>
+    </view>
+    <view class="nbaStandings_table_content" style="border-bottom:2rpx solid black;">
+      <text>排名</text>
+      <text>球队</text>
+      <text>胜</text>
+      <text>负</text>
+      <text>胜率</text>
+      <text>连胜/负</text>
+    </view>
+    <view class="nbaStandings_table_content" wx:for="{{east}}" >
+      <text>{{item.ranking}}</text>
+      <text>{{item.name}}</text>
+      <text>{{item.win}}</text>
+      <text>{{item.lost}}</text>
+      <text>{{item.win_rate}}</text>
+      <text>{{item.recent}}</text>
+    </view>
+  </view>
+
+  <view class="nbaStandings_table">
+    <view class="nbaStandings_table_head">
+      <text>西部</text>
+    </view>
+    <view class="nbaStandings_table_content" style="border-bottom:2rpx solid black;">
+      <text>排名</text>
+      <text>球队</text>
+      <text>胜</text>
+      <text>负</text>
+      <text>胜率</text>
+      <text>连胜/负</text>
+    </view>
+    <view class="nbaStandings_table_content" wx:for="{{west}}" >
+      <text>{{item.ranking}}</text>
+      <text>{{item.name}}</text>
+      <text>{{item.win}}</text>
+      <text>{{item.lost}}</text>
+      <text>{{item.win_rate}}</text>
+      <text>{{item.recent}}</text>
+    </view>
+  </view>
+
+
+

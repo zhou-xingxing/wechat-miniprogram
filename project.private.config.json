@@ -11,7 +11,20 @@
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "pages/nbaStandings/nbaStandings",
+          "pathName": "pages/nbaStandings/nbaStandings",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/switchTeam/switchTeam",
+          "pathName": "pages/switchTeam/switchTeam",
+          "query": "",
+          "scene": null
+        }
+      ]
     }
   }
 }

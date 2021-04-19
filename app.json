@@ -4,7 +4,10 @@
     "pages/random/random",
     "pages/weather/weather",
     "pages/ze/ze",
-    "pages/note/note"
+    "pages/feedback/feedback",
+    "pages/nbaStandings/nbaStandings",
+    "pages/switchTeam/switchTeam",
+    "pages/nbaSchedule/nbaSchedule"
   ],
   "tabBar": {
     "color": "#7A7E83",

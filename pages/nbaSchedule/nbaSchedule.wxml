@@ -1,0 +1,30 @@
+<!--pages/nbaSchedule/nbaSchedule.wxml-->
+<!--pages/nbaSchedule/nbaSchedule.wxml-->
+<view>
+  <image src="/images/nba-icon.png" class="nbaStandings_title">
+  </image>
+</view>
+
+  <view class="nbaStandings_table">
+    <view class="nbaStandings_table_head">
+      <text>主队</text>
+      <text>{{team_name}}</text>
+    </view>
+    <view class="nbaStandings_table_content" style="border-bottom:2rpx solid black;">
+      <text>日期</text>
+      <text>主队vs客队</text>
+      <text>比分</text>
+      <text>结果</text>
+    
+    </view>
+    <view class="nbaStandings_table_content" wx:for="{{team_schedule}}" >
+      <text>{{item.dateTime}}</text>
+      <text>{{item.homeTeam}}vs{{item.awayTeam}}</text>
+      <text>{{item.homeTeamScore}}-{{item.awayTeamScore}}</text>
+      <text wx:if="{{item.winOrLoss == null}}">未开始</text>
+      <text wx:elif="{{item.winOrLoss == 'Won'}}">胜</text>
+      <text wx:else>负</text>
+    </view>
+  </view>
+
+  
