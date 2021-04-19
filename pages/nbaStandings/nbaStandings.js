@@ -15,7 +15,7 @@ Page({
   onLoad: function (options) {
     let that=this
     wx.request({
-      url: 'https://localhost:9527/team_standings',
+      url: 'https://ss.xiaozeze.top:9527/team_standings',
       method:'GET',
       success: function(res){
         // console.log(res.data.east)

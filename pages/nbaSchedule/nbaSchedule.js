@@ -1,18 +1,69 @@
 // pages/nbaSchedule/nbaSchedule.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    team_name:"",
+    team_schedule:[]
   },
-
+  team_map:(key)=>{
+    let name_map={    
+        "nets":"篮网",
+        "lakers":"湖人",
+        "clippers":"快船",
+        "sixers":"76人",   
+    }
+    return name_map[key]
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //获取主队信息
+    let host_team=app.globalData.host_team
+    let that=this
+    this.setData({
+      team_name:that.team_map(host_team)
+    })
+    if(host_team==""){
+      wx.showToast({
+        title: "您还未选择主队",
+        icon: 'error',
+        duration: 1500,
+        success: function() {
+          setTimeout(function() {
+            //要延时执行的代码
+            wx.navigateBack({
+              delta: 1 //返回上级页面
+            })
+          }, 1500) //延迟时间
+        },
+      })
+    }
+    //请求
+    wx.request({
+      url: 'https://ss.xiaozeze.top:9527/team_schedule',
+      method:'GET',
+      data:{
+        team_name:host_team
+      },
+      success(res){
+        // console.log(res.data)
+        that.setData({
+          team_schedule:res.data
+        })
+      },
+      fail(){
+        wx.showToast({
+          title: '请求失败',
+          icon: 'error',
+          duration: 1500
+        })
+      }
+    })
   },
 
   /**

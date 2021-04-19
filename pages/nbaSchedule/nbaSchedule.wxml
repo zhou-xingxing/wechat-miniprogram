@@ -1,2 +1,29 @@
 <!--pages/nbaSchedule/nbaSchedule.wxml-->
-<text>pages/nbaSchedule/nbaSchedule.wxml</text>
+<!--pages/nbaSchedule/nbaSchedule.wxml-->
+<view>
+  <image src="/images/nba-icon.png" class="nbaStandings_title">
+  </image>
+</view>
+
+  <view class="nbaStandings_table">
+    <view class="nbaStandings_table_head">
+      <text>主队</text>
+      <text>{{team_name}}</text>
+    </view>
+    <view class="nbaStandings_table_content" style="border-bottom:2rpx solid black;">
+      <text>月份</text>
+      <text>主队VS客队</text>
+      <text>比分</text>
+      <text>结果</text>
+    
+    </view>
+    <view class="nbaStandings_table_content" wx:for="{{team_schedule}}" >
+      <text>{{item.month}}</text>
+      <text>{{item.homeTeam}}VS{{item.awayTeam}}</text>
+      <text>{{item.homeTeamScore}}VS{{item.awayTeamScore}}</text>
+      <text wx:if="{{item.winOrLoss == null}}">未开始</text>
+      <text wx:else>{{item.winOrLoss}}</text>
+    </view>
+  </view>
+
+  

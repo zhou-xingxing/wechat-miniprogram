@@ -1,4 +1,4 @@
-/* pages/nbaSchedule/nbaSchedule.wxss */
+/* pages/nbaSchedule/nbaStandings.wxss */
 .nbaStandings_title{
   box-sizing: border-box;
   width: 750rpx;
