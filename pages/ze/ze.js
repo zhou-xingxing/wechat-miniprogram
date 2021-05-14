@@ -26,51 +26,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-    openid:null,
     host_team_name:"",
+  },
+
+  gethostTeam(){
+    let team_name=util.team_map(app.globalData.host_team)
+    // console.log(team_name)
+    this.setData({
+    host_team_name:team_name
+  })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    util.login().then(this.gethostTeam)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    //全局变量写法
-    // let openid=app.globalData.openid
-    /*本地存储异步写法
-    let that=this
-    wx.getStorage({
-      key: 'openid',
-      success (res) {
-        // console.log(openid_store)
-        that.setData({
-          openid:res.data
-        })
-      }
-    })
-    */
-    //同步写法
-    this.setData({
-       openid:wx.getStorageSync('openid'),
-      }     
-    )
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let team_name=util.team_map(app.globalData.host_team)
-    // console.log(team_name)
-    this.setData({
-    host_team_name:team_name
-  })
+    if(app.globalData.host_team==""){
+      // console.log('第一次加载')
+      util.login().then(this.gethostTeam)
+    }
+    else{
+      this.setData({
+        host_team_name:util.team_map(app.globalData.host_team)
+      })
+    }
   },
 
   /**

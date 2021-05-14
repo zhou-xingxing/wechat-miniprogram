@@ -40,11 +40,42 @@ const team_map=(key)=>{
   }
   return name_map[key]
 }
-
+// 登录 promise实现同步
+function login(){
+  let promise = new Promise((resolve,reject)=>{
+    wx.login({
+      success (res) {
+        if (res.code) {
+          // console.log(res.code)
+          //发起网络请求
+          wx.request({
+            url: 'https://ss.xiaozeze.top:9527/getopenid',
+            method:'POST',
+            data: {
+              code: res.code
+            },
+            success (res) {
+              // console.log(res.data)
+              // getApp().globalData.token=res.data.token;
+              // console.log("login()---token:"+getApp().globalData.token)
+              wx.setStorageSync('openid', res.data.openid)
+              getApp().globalData.host_team=res.data.host_team
+              resolve()
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+  })
+  return promise;
+}
 
 
 module.exports = {
   formatTime,
   team_map,
-  nba_teams
+  nba_teams,
+  login
 }
