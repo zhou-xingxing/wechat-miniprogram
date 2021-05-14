@@ -33,8 +33,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    openid:null,
     host_team:"",
+    token:'',
   }
 })
 

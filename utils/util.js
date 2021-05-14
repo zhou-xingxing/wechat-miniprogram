@@ -49,17 +49,16 @@ function login(){
           // console.log(res.code)
           //发起网络请求
           wx.request({
-            url: 'https://ss.xiaozeze.top:9527/getopenid',
+            url: 'https://localhost:9527/getopenid',
             method:'POST',
             data: {
               code: res.code
             },
             success (res) {
-              // console.log(res.data)
-              // getApp().globalData.token=res.data.token;
-              // console.log("login()---token:"+getApp().globalData.token)
-              wx.setStorageSync('openid', res.data.openid)
-              getApp().globalData.host_team=res.data.host_team
+              let app=getApp()
+              app.globalData.token=res.data.token
+              app.globalData.host_team=res.data.host_team
+              // console.log(app.globalData.token)
               resolve()
             }
           })

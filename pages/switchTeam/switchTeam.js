@@ -31,14 +31,13 @@ Page({
     //发送修改数据
     let that=this
     wx.request({
-      url: 'https://ss.xiaozeze.top:9527/switchTeam',
+      url: 'https://localhost:9527/switchTeam',
       method:'POST',
       data:{
         host_team:that.data.host_team,
-        openid:wx.getStorageSync('openid'),
       },
       header:{
-        'content-type': 'application/json'
+        'token':app.globalData.token
       },
       success(res){
         // console.log(res.data)
