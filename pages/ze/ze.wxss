@@ -15,3 +15,8 @@
   border-radius: 50%;
 }
 
+.feedback-image{
+  width: 40rpx;
+  height: 40rpx;
+  margin:0 15rpx;
+}

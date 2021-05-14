@@ -1,18 +1,13 @@
 // pages/switchTeam/switchTeam.js
 const app=getApp()
+const util=require('../../utils/util')
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     host_team:"",
-    items: [
-      {value: 'nets', name: '篮网'},
-      {value: 'lakers', name: '湖人' },
-      {value: 'clippers', name: '快船'},
-      {value: 'sixers', name: '76人'},
-    ]
+    items: null,
   },
   //radio变化
   radioChange(e) {
@@ -85,7 +80,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      items:util.nba_teams
+    })
   },
 
   /**

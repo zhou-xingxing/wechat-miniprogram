@@ -1,5 +1,6 @@
 // pages/ze/ze.js
 const app=getApp()
+const util = require('../../utils/util.js')
 Page({
   skipSwitchTeam:function(){
     wx.navigateTo({
@@ -27,16 +28,6 @@ Page({
   data: {
     openid:null,
     host_team_name:"",
-  },
-
-  team_map:(key)=>{
-    let name_map={    
-        "nets":"篮网",
-        "lakers":"湖人",
-        "clippers":"快船",
-        "sixers":"76人",   
-    }
-    return name_map[key]
   },
 
   /**
@@ -75,7 +66,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let team_name=this.team_map(app.globalData.host_team)
+    let team_name=util.team_map(app.globalData.host_team)
     // console.log(team_name)
     this.setData({
     host_team_name:team_name

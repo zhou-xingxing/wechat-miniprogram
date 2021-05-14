@@ -1,5 +1,6 @@
 // pages/nbaSchedule/nbaSchedule.js
 const app=getApp()
+const util = require('../../utils/util.js')
 Page({
 
   /**
@@ -9,15 +10,7 @@ Page({
     team_name:"",
     team_schedule:[]
   },
-  team_map:(key)=>{
-    let name_map={    
-        "nets":"篮网",
-        "lakers":"湖人",
-        "clippers":"快船",
-        "sixers":"76人",   
-    }
-    return name_map[key]
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,7 +19,7 @@ Page({
     let host_team=app.globalData.host_team
     let that=this
     this.setData({
-      team_name:that.team_map(host_team)
+      team_name:util.team_map(host_team)
     })
     if(host_team==""){
       wx.showToast({

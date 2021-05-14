@@ -16,7 +16,8 @@
   <view style="margin:100rpx auto;">
     <button type="primary" bindtap="skipTeamSchedule">主队赛程</button>
   </view>
-  <view>
-    <text bindtap="skipFeedback">信息有误？</text>
+  <view bindtap="skipFeedback">
+    <image src="/images/feedback.png" class="feedback-image"></image>
+    <text >信息有误？</text>
   </view>
 </view>
