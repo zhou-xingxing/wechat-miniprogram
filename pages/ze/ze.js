@@ -7,26 +7,34 @@ Page({
       url: '../switchTeam/switchTeam',
     })
   },
-  skipTeamSchedule:function(){
+  skipTeamSchedule:function(team){
+    let url='../nbaSchedule/nbaSchedule?team='+team
     wx.navigateTo({
-      url: '../nbaSchedule/nbaSchedule',
+      url: url,
     })
   },
-  skipTeamSchedule:function(){
-    wx.navigateTo({
-      url: '../nbaSchedule/nbaSchedule',
-    })
+  skipHostTeamSchedule:function(){
+    let team=app.globalData.host_team
+    this.skipTeamSchedule(team)
   },
   skipFeedback:function(){
     wx.navigateTo({
       url: '../feedback/feedback',
     })
   },
+  bindPickerChange:function(e){
+    // console.log(e.detail)
+    let chooseTeam=this.data.team_list[e.detail.value].value
+    console.log(chooseTeam)
+    this.skipTeamSchedule(chooseTeam)
+  },
   /**
    * 页面的初始数据
    */
   data: {
     host_team_name:"",
+    team_list:null,
+    
   },
 
   gethostTeam(){
@@ -41,7 +49,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      team_list:util.nba_teams
+    })
+    console.log(this.data.team_list)
   },
 
   /**

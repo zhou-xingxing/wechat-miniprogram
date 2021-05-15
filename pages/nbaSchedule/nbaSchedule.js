@@ -15,15 +15,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //获取主队信息
-    let host_team=app.globalData.host_team
+    //获取球队信息
+    console.log(options)
+    let team=options.team
     let that=this
-    this.setData({
-      team_name:util.team_map(host_team)
-    })
-    if(host_team==""){
+    if(team==""){
       wx.showToast({
-        title: "您还未选择主队",
+        title: "您还未选择球队",
         icon: 'error',
         duration: 1500,
         success: function() {
@@ -35,13 +33,17 @@ Page({
           }, 1500) //延迟时间
         },
       })
+      return
     }
+    this.setData({
+      team_name:util.team_map(team)
+    })
     //请求
     wx.request({
-      url: 'https://ss.xiaozeze.top:9527/team_schedule',
+      url: 'https://localhost:9527/team_schedule',
       method:'GET',
       data:{
-        team_name:host_team
+        team:team
       },
       success(res){
         // console.log(res.data)

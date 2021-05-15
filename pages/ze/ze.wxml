@@ -10,13 +10,18 @@
       我的主队：{{host_team_name}}
     </view>
   </view>
-  <view style="margin:100rpx auto;">
+  <view style="margin:50rpx auto;">
     <button type="primary" bindtap="skipSwitchTeam">选择主队</button>
   </view>
-  <view style="margin:100rpx auto;">
-    <button type="primary" bindtap="skipTeamSchedule">主队赛程</button>
+  <view style="margin:50rpx auto;">
+    <button type="primary" bindtap="skipHostTeamSchedule">主队赛程</button>
   </view>
-  <view bindtap="skipFeedback">
+  <view style="margin:50rpx auto;">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{team_list}}" range-key="name">
+      <button type="primary">查看其他球队赛程</button>
+    </picker>
+  </view>
+  <view style="margin-top:100rpx" bindtap="skipFeedback">
     <image src="/images/feedback.png" class="feedback-image"></image>
     <text >信息有误？</text>
   </view>

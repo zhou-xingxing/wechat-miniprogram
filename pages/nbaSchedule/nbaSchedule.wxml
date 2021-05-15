@@ -7,7 +7,7 @@
 
   <view class="nbaStandings_table">
     <view class="nbaStandings_table_head">
-      <text>主队</text>
+      <text>球队</text>
       <text>{{team_name}}</text>
     </view>
     <view class="nbaStandings_table_content" style="border-bottom:2rpx solid black;">
