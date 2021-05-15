@@ -25,7 +25,7 @@ Page({
     })
     //请求
     wx.request({
-      url: 'https://localhost:9527/team_schedule',
+      url: 'https://ss.xiaozeze.top:9527/team_schedule',
       method:'GET',
       data:{
         team:team

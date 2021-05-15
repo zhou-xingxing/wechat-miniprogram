@@ -49,7 +49,7 @@ function login(){
           // console.log(res.code)
           //发起网络请求
           wx.request({
-            url: 'https://localhost:9527/getopenid',
+            url: 'https://ss.xiaozeze.top:9527/getopenid',
             method:'POST',
             data: {
               code: res.code
@@ -72,6 +72,9 @@ function login(){
 }
 
 function emailcheck(email){
+  if(email==null||email==''){
+    return true
+  }
   let reg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
   return reg.test(email)
 }

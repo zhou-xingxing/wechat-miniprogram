@@ -31,7 +31,7 @@ Page({
     //发送修改数据
     let that=this
     wx.request({
-      url: 'https://localhost:9527/switchTeam',
+      url: 'https://ss.xiaozeze.top:9527/switchTeam',
       method:'POST',
       data:{
         host_team:that.data.host_team,

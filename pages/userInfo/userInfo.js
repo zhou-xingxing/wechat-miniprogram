@@ -31,8 +31,9 @@ Page({
     }
     let token=app.globalData.token
     let that=this
+    // console.log(that.data)
     wx.request({
-      url: 'https://localhost:9527/updateUserInfo',
+      url: 'https://ss.xiaozeze.top:9527/updateUserInfo',
       method:'POST',
       header:{
         'token':token
@@ -90,7 +91,7 @@ Page({
     }
     let that=this
     wx.request({
-      url: 'https://localhost:9527/getUserInfo',
+      url: 'https://ss.xiaozeze.top:9527/getUserInfo',
       method:'POST',
       header:{
         'token':token
@@ -105,10 +106,17 @@ Page({
           })
         }
         else{
-          that.setData({
-            userAddress:res.data.address,
-            userEmail:res.data.email,
-          })
+          if(res.data.address!=null){
+            that.setData({
+              userAddress:res.data.address,
+            })
+          }
+          if(res.data.email!=null){
+            that.setData({
+              userEmail:res.data.email,
+            })
+          }
+          // console.log(res.data)
         }
       },
       fail(){
