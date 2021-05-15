@@ -19,22 +19,7 @@ Page({
     console.log(options)
     let team=options.team
     let that=this
-    if(team==""){
-      wx.showToast({
-        title: "您还未选择球队",
-        icon: 'error',
-        duration: 1500,
-        success: function() {
-          setTimeout(function() {
-            //要延时执行的代码
-            wx.navigateBack({
-              delta: 1 //返回上级页面
-            })
-          }, 1500) //延迟时间
-        },
-      })
-      return
-    }
+
     this.setData({
       team_name:util.team_map(team)
     })

@@ -15,6 +15,14 @@ Page({
   },
   skipHostTeamSchedule:function(){
     let team=app.globalData.host_team
+    if(team==null){
+      wx.showToast({
+        title: "您还未选择球队",
+        icon: 'error',
+        duration: 1500,
+      })
+      return
+    }
     this.skipTeamSchedule(team)
   },
   skipFeedback:function(){
@@ -28,16 +36,20 @@ Page({
     console.log(chooseTeam)
     this.skipTeamSchedule(chooseTeam)
   },
+  skipUserInfo(){
+    wx.navigateTo({
+      url: '../userInfo/userInfo',
+    })
+  },
   /**
    * 页面的初始数据
    */
   data: {
     host_team_name:"",
     team_list:null,
-    
   },
 
-  gethostTeam(){
+  gethostTeamName(){
     let team_name=util.team_map(app.globalData.host_team)
     // console.log(team_name)
     this.setData({
@@ -52,7 +64,7 @@ Page({
     this.setData({
       team_list:util.nba_teams
     })
-    console.log(this.data.team_list)
+    // console.log(this.data.team_list)
   },
 
   /**
@@ -66,9 +78,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(app.globalData.host_team==""){
+    if(app.globalData.host_team==null){
       // console.log('第一次加载')
-      util.login().then(this.gethostTeam)
+      util.login().then(this.gethostTeamName)
     }
     else{
       this.setData({

@@ -1,0 +1,21 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <view class="userinfo-avatar">
+      <!-- 这里的头像和昵称只是显示在用户页面上，并没有被小程序获取到 -->
+      <open-data type="userAvatarUrl" ></open-data>
+    </view>
+    <open-data type="userNickName"></open-data>  
+  </view>
+  <view class="input-group">
+    <label>联系邮箱：</label>
+    <input bindinput="emailChange" class="input-box" value="{{userEmail}}"></input>
+  </view>
+  <view class="input-group">
+    <label>联系地址：</label>
+    <input  bindinput="addressChange" class="input-box" value="{{userAddress}}"></input>
+  </view>
+  <view style="margin-top:200rpx">
+    <button type="primary" bindtap="saveUserInfo">保存</button>
+  </view>
+</view>

@@ -58,7 +58,7 @@ function login(){
               let app=getApp()
               app.globalData.token=res.data.token
               app.globalData.host_team=res.data.host_team
-              // console.log(app.globalData.token)
+              // console.log(app.globalData.host_team)
               resolve()
             }
           })
@@ -71,10 +71,15 @@ function login(){
   return promise;
 }
 
+function emailcheck(email){
+  let reg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+  return reg.test(email)
+}
 
 module.exports = {
   formatTime,
   team_map,
   nba_teams,
-  login
+  login,
+  emailcheck,
 }
