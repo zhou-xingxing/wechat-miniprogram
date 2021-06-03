@@ -1,66 +1,196 @@
-const app = getApp()
- 
- 
+// pages/chat/chat.js
+var MD5 = require('../../utils/MD5.js');
 Page({
- 
   /**
    * 页面的初始数据
    */
   data: {
-    tittle: "Let's Chat",
-    syas: [{
-        'robot': '我是XX，来跟我聊天吧！'
-      }
-    ],
-    headLeft: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4139308026,2925331886&fm=26&gp=0.jpg',
-    headRight: '',
- 
+    msgList: [{
+      type: 1,
+      msg: "可以随便问我问题哦!",
+      key: (new Date()).valueOf
+    }],
+  
+    scrolltop:'',
+    searchinput:""
   },
- 
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
-    let that = this
-      wx.getUserInfo({
-        success:function(e){
-          let header = e.userInfo.avatarUrl
-          that.setData({
-            headRight:header
+  onLoad: function (options) {
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  },
+
+  /**
+   * 判断发送信息是否为空
+   */
+  isEmpty: function (e) {
+    if (e.length === 0) {
+      return false
+    } else {
+      return true
+    }
+  },
+  
+  send: function (e) {
+    var msg = e.detail.value.msg
+    // 输入框清空
+    this.setData({
+      searchinput: '',  
+    })
+    if (!this.isEmpty(msg)) {
+      wx.showToast({
+        title: '不能发送空信息',
+        icon: 'none'
+      })
+      return
+    }
+    var msgList = this.data.msgList
+    msgList.push({
+      type: 0,
+      msg: msg,
+      key:(new Date()).valueOf
+    })
+    var charlenght = msgList.length;
+    this.setData({
+      msgList: msgList,
+      scrolltop: "scroll" + charlenght,
+    })
+    this.getReply(msg)
+  },
+
+  editorMsg: function (data, msgList, charlenght){
+      msgList.push({
+      type: 1,
+      msg: data.nli[0].desc_obj.result,
+      key: (new Date()).valueOf
+      })
+      console.log(data)
+      this.setData({
+        msgList: msgList,
+        scrolltop: "scroll" + msgList.length,
+      })
+      
+      if (data.nli[0].type == "selection" || data.nli[0].type == "news" || data.nli[0].type == "joke" || data.nli[0].type == "baike"){
+        if (data.nli[0].type === "baike"){
+          (data.nli[0].data_obj).forEach((item) => {
+            
+            msgList.push({
+              type: 1,
+              msg: item.description,
+              key: (new Date()).valueOf
+            })
+          })
+          return 
+        }else if(data.nli[0].type === "joke"){
+          (data.nli[0].data_obj).forEach((item) => {
+            msgList.push({
+              type: 1,
+              msg: item.content,
+              key: (new Date()).valueOf
+            })
+          })
+          return 
+        }else{
+          (data.nli[0].data_obj).forEach((item) => {
+            msgList.push({
+              type: 1,
+              msg: item.title + item.detail,
+              key: (new Date()).valueOf
+            })
           })
         }
-      })
- 
+        
+      }
   },
- 
- 
-  converSation: function(e) {
-    let that = this
-    var obj = {},
-    isay = e.detail.value.says,
-    syas=that.data.syas,
-    length = syas.length
-   
-    
-    console.log(length)
+  getReply: function (sendMsg) {
+    var that = this
+    var rqJson = { "data": { "input_type": 1, "text": sendMsg }, "data_type":"stt" };
+    var rq = JSON.stringify(rqJson);
+    var appkey = "262a7b2f36f64352b5005dc9e426997a"
+    var api = "nli"
+    //var timestamp = 1527923988000
+    var timestamp = new Date().getTime()
+    var appSecret = "ac9a36079487436db39d5585fc5f84f2"
+    var sign = MD5.md5(appSecret + "api=" + api + "appkey=" + appkey + "timestamp=" + timestamp + appSecret);
+    //var sign = "06edee7d4d9728ea7ee29ad91d7946a7"
     wx.request({
-      url: 'http://api.qingyunke.com/api.php?key=free&appid=0&msg='+isay,
-      success:function(res){
-        obj.robot=res.data.content;
-        obj.isay=isay;
-        syas.push(obj);
-        that.setData({
-          syas:syas
+      url:'https://cn.olami.ai/cloudservice/api',
+      method: "get",
+      data: {
+        appkey:appkey,
+        api:api,
+        timestamp: timestamp,
+        sign: sign,
+        cusid: "",
+        rq: rq
+      },
+      header: {
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+      },
+      success: function (res) {
+       console.log(res)
+       var msgList = that.data.msgList
+       var charlenght = 0
+       that.editorMsg(res.data.data, msgList, charlenght)
+       that.setData({
+         msgList: msgList,
+       })
+      },
+      fail:function(res){
+        var msgList = that.data.msgList
+        msgList.push({
+          type: 1,
+          msg: "出错了!",
+          key: (new Date()).valueOf
         })
-    }})
-    
-   
-  },
-  delectChat:function(){
-    let that = this
-    that.setData({
-      syas:[]
+        console.log(res)
+        that.setData({
+          msgList: msgList,
+        })
+      }
     })
   }
- 
 })
