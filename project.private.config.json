@@ -23,6 +23,11 @@
           "pathName": "pages/switchTeam/switchTeam",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/chatbot/chatbot",
+          "pathName": "pages/chatbot/chatbot",
+          "scene": null
         }
       ]
     }

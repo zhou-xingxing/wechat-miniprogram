@@ -8,7 +8,8 @@
     "pages/nbaStandings/nbaStandings",
     "pages/switchTeam/switchTeam",
     "pages/nbaSchedule/nbaSchedule",
-    "pages/userInfo/userInfo"
+    "pages/userInfo/userInfo",
+    "pages/chatbot/chatbot"
   ],
   "tabBar": {
     "color": "#7A7E83",
