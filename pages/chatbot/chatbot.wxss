@@ -34,7 +34,7 @@
   background-color: #EFD6F5;
   border-radius: 5px;
   margin: 10px;
-  margin-top: 0px
+  margin-top: 0px;
 }
 .scroll-view{
   height: 90%;
@@ -56,20 +56,20 @@
 .sendMsg{
   display: flex;
   height: 40px;
+  justify-content:space-around
 }
 
 .inputMsg{
-  width: 75%;
-  margin-left: 5px;
+  /* width: 90%; */
+  /* margin:0 5px; */
+  width: 600rpx;
   height: 100%;
-  padding-left: 10px;
   border-top-color: #fff;
   border-bottom-color: #EFD6F5;
-  background-color: #8799a3;
+  background-color: #c3cbcf;
 }
 .sendBtn{
-  display: inline-block;
-  margin-left: 10px;
+  width: 50rpx;
   height: 100%;
   text-align: center;
 }

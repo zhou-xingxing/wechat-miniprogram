@@ -25,6 +25,11 @@ Page({
         url: '../nbaStandings/nbaStandings'
       })
     },
+    skipchatbot:function(){
+      wx.navigateTo({
+        url: '../chatbot/chatbot'
+      })
+    },
   /**
    * 页面的初始数据
    */
@@ -38,14 +43,14 @@ Page({
        title:"查天气",
        bindtap:"skipWeather"
       },
-      // {imgsrc:"/images/edit-Fill.png",
-      //  title:"写树洞",
-      //  bindtap:"skipNote"
-      // },
       {imgsrc:"/images/cloud-Fill.png",
        title:"NBA球队排名",
        bindtap:"skipnbaStandings"
       },
+      {imgsrc:"/images/robot.png",
+      title:"聊天机器人",
+      bindtap:"skipchatbot"
+     },
     ]
   },
 

@@ -3,7 +3,7 @@
     <view class='chat-list'>
       <block wx:for="{{msgList}}" wx:key="{{item.key}}">
         <view class='reply' wx:if="{{item.type==1}}" id="scroll{{index + 1}}">
-          <image class='photo' src='/images/me.png'></image>
+          <image class='photo' src='/images/robot.png'></image>
           <text class='text'>{{item.msg}}</text>
         </view>
 
@@ -17,8 +17,8 @@
 
   <form bindsubmit="send" class='sendMsgForm'>
     <view class='sendMsg'>
-      <input class='inputMsg' name="msg" value='{{searchinput}}'></input>
-      <button type="primary" form-type="submit">发送</button>
+      <input class='inputMsg' name="msg" value='{{searchinput}}' placeholder="请输入问题..."></input>
+      <button class='sendBtn' type="primary" form-type="submit">发送</button>
     </view>
   </form>
 </view>
