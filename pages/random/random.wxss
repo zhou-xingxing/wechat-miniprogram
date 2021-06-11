@@ -1,5 +1,43 @@
 /* pages/random/random.wxss */
 
+.header-block{
+  width: 750rpx;
+  height: 850rpx;
+  background-color: yellow;
+}
+.touzi-block{
+  width: 700rpx;
+  height: 700rpx;
+  /* border: 3rpx solid black; */
+  margin:30rpx auto;
+}
+
+.scroll-view{
+  height:700rpx;
+}
+
+.touzi-list-item{
+  width: 450rpx;
+  font-size: 40rpx;
+  margin: 10rpx auto;
+}
+
+
+.footer-block{
+  margin-top:50rpx;
+  width: 750rpx;
+  height: 450rpx;
+  background-color: cadetblue;
+}
+
+.big-lable{
+  font-size: 50rpx;
+  margin-left: 30rpx;
+  margin-top:30rpx;
+  margin-bottom: 30rpx;
+}
 .touzi{
-  margin: 50rpx;
+  width: 400rpx;
+  height: 240rpx;
+  margin:30rpx 175rpx;
 }

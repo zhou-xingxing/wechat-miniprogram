@@ -1,5 +1,17 @@
 <!--pages/random/random.wxml-->
-<view class="container">
-  <image src="/images/touzi.jpg" class="touzi"></image>
-  <view>本次投掷：{{value}}</view>
+<view>
+  <view class="header-block">
+    <view class="big-lable">结果区</view>  
+    <view class="touzi-block">
+      <scroll-view scroll-y="true" scroll-into-view="{{scrolltop}}" enable-back-to-top="true" class="scroll-view">
+      <block wx:for="{{touziList}}">
+        <view class="touzi-list-item" id="touzi{{index+1}}">第{{index+1}}次投掷的结果是：{{item}}</view>
+      </block>
+    </scroll-view>
+    </view>
+</view>
+  <view class="footer-block">
+    <view class="big-lable">投掷区</view>
+    <image src="/images/touzi.jpg" class="touzi" bindtap="addTouzi"></image>
+  </view>
 </view>

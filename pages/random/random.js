@@ -18,9 +18,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    value:0
+    touziList:[],
+    scrolltop:"",
   },
-
+  addTouzi(){
+    let newtouzi=randomNum(1,6);
+    let list=this.data.touziList;
+    list.push(newtouzi);
+    this.setData({
+      touziList:list,
+      scrolltop:'touzi'+list.length
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -39,9 +48,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      value:randomNum(1,6)
-    })
+   
   },
 
   /**
