@@ -2,14 +2,14 @@
   "pages": [
     "pages/show/show",
     "pages/random/random",
-    "pages/weather/weather",
     "pages/ze/ze",
     "pages/feedback/feedback",
     "pages/nbaStandings/nbaStandings",
     "pages/switchTeam/switchTeam",
     "pages/nbaSchedule/nbaSchedule",
     "pages/userInfo/userInfo",
-    "pages/chatbot/chatbot"
+    "pages/chatbot/chatbot",
+    "pages/moviebot/moviebot"
   ],
   "tabBar": {
     "color": "#7A7E83",

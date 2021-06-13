@@ -6,13 +6,7 @@ Page({
         url: '../random/random'
       })
     },
-    // 事件处理函数
-    skipWeather() {
-      wx.navigateTo({
-        url: '../weather/weather'
-      })
-    },
-
+   
     // 事件处理函数
     skipNote:function() {
       wx.navigateTo({
@@ -30,6 +24,11 @@ Page({
         url: '../chatbot/chatbot'
       })
     },
+    skipmoviebot:function(){
+      wx.navigateTo({
+        url: '../moviebot/moviebot'
+      })
+    },
   /**
    * 页面的初始数据
    */
@@ -39,10 +38,6 @@ Page({
        title:"摇骰子",
        bindtap:"skipRandom"
       },
-      {imgsrc:"/images/bag-Fill.png",
-       title:"查天气",
-       bindtap:"skipWeather"
-      },
       {imgsrc:"/images/cloud-Fill.png",
        title:"NBA球队排名",
        bindtap:"skipnbaStandings"
@@ -50,6 +45,10 @@ Page({
       {imgsrc:"/images/robot.png",
       title:"聊天机器人",
       bindtap:"skipchatbot"
+     },
+     {imgsrc:"/images/robot.png",
+      title:"电影问答机器人",
+      bindtap:"skipmoviebot"
      },
     ]
   },

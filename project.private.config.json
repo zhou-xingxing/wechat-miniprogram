@@ -27,6 +27,30 @@
         {
           "name": "pages/chatbot/chatbot",
           "pathName": "pages/chatbot/chatbot",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/weather/weather",
+          "pathName": "pages/weather/weather",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/random/random",
+          "pathName": "pages/random/random",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/chatbot/chatbot",
+          "pathName": "pages/chatbot/chatbot",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/moviebot/moviebot",
+          "pathName": "pages/moviebot/moviebot",
           "scene": null
         }
       ]

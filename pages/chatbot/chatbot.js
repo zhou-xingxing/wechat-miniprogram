@@ -116,7 +116,6 @@ Page({
       if (data.nli[0].type == "selection" || data.nli[0].type == "news" || data.nli[0].type == "joke" || data.nli[0].type == "baike"){
         if (data.nli[0].type === "baike"){
           (data.nli[0].data_obj).forEach((item) => {
-            
             msgList.push({
               type: 1,
               msg: item.description,
@@ -142,7 +141,6 @@ Page({
             })
           })
         }
-        
       }
   },
   getReply: function (sendMsg) {
