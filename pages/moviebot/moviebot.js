@@ -10,16 +10,15 @@ Page({
       msg: "可以随便问我问题哦!",
       key: (new Date()).valueOf
     }],
-  
     scrolltop:'',
-    searchinput:""
+    searchinput:"",
+   
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -80,6 +79,7 @@ Page({
       return true
     }
   },
+  // 发送消息
   send: function (e) {
     let msg = e.detail.value.msg
     // 输入框清空
@@ -106,7 +106,7 @@ Page({
     })
     this.getReply(msg)
   },
-
+// 获取回复
   getReply: function (sendMsg) {
     let that = this
     wx.request({

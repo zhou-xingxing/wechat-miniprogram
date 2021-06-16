@@ -8,7 +8,7 @@
 }
 .form-header{
   box-sizing: border-box;
-  background-color: crimson;
+  background-color:#9c26b0;
   margin:60rpx 0 0 0;
   height: 100rpx;
   font-size:50rpx;
@@ -23,7 +23,7 @@
 .form-item{
   box-sizing: border-box;
   height: 100rpx;
-  background-color:green;
+  background-color:#8799a3;
   display: flex;
   justify-content:space-around;
   align-items: center;
