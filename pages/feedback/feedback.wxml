@@ -1,5 +1,5 @@
 <!--pages/note/note.wxml-->
-<view class="container">
+<view >
   <view class="form-panel">
     <form catchsubmit="formSubmit">
         <view class="form-title">

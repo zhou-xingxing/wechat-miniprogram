@@ -1,9 +1,8 @@
 /* pages/switchTeam/switchTeam.wxss */
 .form-panel{
   box-sizing: border-box;
-  background-color: blanchedalmond;
+  background-color: lightblue;
   width: 650rpx;
-  /* height: 1000rpx; */
   border-radius: 5%;
 }
 .form-header{

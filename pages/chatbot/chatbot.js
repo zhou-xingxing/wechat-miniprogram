@@ -7,7 +7,7 @@ Page({
   data: {
     msgList: [{
       type: 1,
-      msg: "可以随便问我问题哦!",
+      msg: "可以随便和我聊天哦!",
       key: (new Date()).valueOf
     }],
   

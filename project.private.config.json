@@ -51,6 +51,18 @@
         {
           "name": "pages/moviebot/moviebot",
           "pathName": "pages/moviebot/moviebot",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/feedback/feedback",
+          "pathName": "pages/feedback/feedback",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/switchTeam/switchTeam",
+          "pathName": "pages/switchTeam/switchTeam",
           "scene": null
         }
       ]
